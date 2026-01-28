@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Stay Safe</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta
+      name="description"
+      content="Stay Safe installs a recurring security reminder on your computer, urging you to lock your computer. It's a fun and educational way to raise awareness of the importance of locking unattended devices."
+    />
+    <meta
+      name="keywords"
+      content="security, reminder, lock computer, computer security, macOS, Linux, privacy, stay safe, cron job, educational, GDPR, security violations"
+    />
+
+    <meta property="og:title" content="Stay Safe - Security Reminder" />
+    <meta
+      property="og:description"
+      content="Stay Safe installs a recurring security reminder on your computer, urging you to lock your computer. It's a fun and educational way to raise awareness of the importance of locking unattended devices."
+    />
+    <meta property="og:image" content="https://marcusmichaels.com/stay-safe/favicon.png" />
+    <meta property="og:url" content="https://marcusmichaels.com/stay-safe" />
+    <meta property="og:type" content="website" />
+
+    <!-- Favicon link -->
+    <link rel="icon" href="https://marcusmichaels.com/stay-safe/favicon.png" type="image/png" />
+
+    <style>
+      body {
+        font-family: monospace;
+        line-height: 1.4;
+        color: #0f172a;
+        padding: 0;
+        margin: 0;
+
+        * {
+          box-sizing: border-box;
+        }
+      }
+
+      h2,
+      h3 {
+        font-weight: inherit;
+        font-size: inherit;
+        margin: 2rem 0 1rem;
+        padding: 0;
+      }
+
+      h3 {
+        font-weight: bold;
+      }
+
+      p {
+        margin-top: 0;
+        margin-bottom: 1rem;
+      }
+
+      header {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        padding-bottom: 1rem;
+        font-family: system-ui, sans-serif;
+      }
+
+      .stay-safe-text {
+        display: inline-block;
+        width: 100%;
+        font-weight: 900;
+        font-size: 20vw;
+        white-space: nowrap;
+        margin: 0 0 0 -2.2vw;
+        padding: 0 0 0 0;
+        line-height: 0.65;
+      }
+
+      .wrapper {
+        max-width: 640px;
+        width: calc(100% - 2rem);
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      main {
+        position: relative;
+        margin-top: -2rem;
+        border: 3px solid black;
+        background-color: #fff;
+        border-radius: 12px;
+        padding: 1rem;
+        box-shadow:
+          500px 250px 800px rgba(0, 0, 255, 1),
+          -500px -250px 800px rgba(255, 0, 0, 1);
+      }
+
+      .warning {
+        position: relative;
+        border: 1px solid #e8d514;
+        background-color: #fff9b8;
+        color: #975608;
+        padding: 2.6rem 1rem 1rem;
+        border-radius: 0.2rem;
+        font-size: 0.8rem;
+        margin-bottom: 2rem;
+
+        p {
+          margin-bottom: 0.4rem;
+        }
+
+        &::after {
+          position: absolute;
+          content: "WARNING";
+          top: 1rem;
+          left: 1rem;
+          font-weight: 700;
+          font-size: 0.9rem;
+        }
+      }
+
+      .safe-message {
+        width: 100%;
+        font-style: italic;
+        font-size: 1.2rem;
+        line-height: 1.2;
+        padding-bottom: 1rem;
+      }
+
+      pre {
+        border: 1px solid #ddd;
+        background-color: #eeeeee50;
+        padding: 1rem;
+        overflow-x: auto;
+        border-radius: 8px;
+      }
+
+      .asterisk {
+        display: inline-block;
+        margin-top: 1rem;
+        font-size: 0.7rem;
+      }
+
+      .notice {
+        text-align: center;
+        font-size: 0.7rem;
+        padding: 1rem 2rem;
+
+        a {
+          color: inherit;
+        }
+      }
+
+      .double-lines {
+        width: 100%;
+        height: 8px;
+        border-top: 1px solid #888;
+        border-bottom: 1px solid #888;
+        margin: 1rem 0;
+      }
+
+      @media (min-width: 600px) {
+        main {
+          padding: 2rem;
+        }
+
+        .safe-message {
+          text-align: center;
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 class="stay-safe-text">STAY SAFE</h1>
+    </header>
+    <main class="wrapper">
+      <section class="warning">
+        <p>Doing this will probably result in you getting fired.</p>
+        <p>
+          Do not do this to someone else's computer, even if they walk away from it leaving it completely vulnerable to <em>actual</em> GDPR
+          and security violations.
+        </p>
+      </section>
+
+      <h2>Running this script installs a recurring reminder that makes a computer audibly<sup>*</sup> say:</h2>
+      <p class="safe-message">“Don’t forget to lock your computer”</p>
+
+      <div class="double-lines"></div>
+      <p>
+        A chain is only as strong as the weakest link. <strong>Stay safe</strong> gives you the power to be the office vigilante that you
+        deserve to be.
+      </p>
+      <p>
+        Using a non-offensive arsenal of a simple reminder, you can impose an audible<sup>*</sup> reminder for your weak link to lock their
+        machine.
+      </p>
+      <div class="double-lines"></div>
+
+      <h3>How to install the reminder:</h3>
+      <ol>
+        <li>Open the <strong>Terminal</strong> app on the macOS or Linux machine.</li>
+        <li>Paste the following command into the terminal:</li>
+      </ol>
+
+      <pre><code>curl -fsSL https://marcusmichaels.com/stay-safe/install | bash</code></pre>
+
+      <h3>How to uninstall the reminder:</h3>
+      <pre><code>curl -fsSL https://marcusmichaels.com/stay-safe/uninstall | bash</code></pre>
+
+      <small class="asterisk">
+        <sup>*</sup> Audible reminders only work on macOS due to using the native <code>say</code> binary. Linux has a visual notification
+        instead.
+      </small>
+    </main>
+    <p class="wrapper notice">
+      This is for educational use only, and to raise awareness of the security implications of leaving a computer unlocked and unattended.
+      Made with love and slight frustration by <a href="https://github.com/marcusmichaels/stay-safe">@marcusmichaels</a>
+    </p>
+  </body>
+</html>

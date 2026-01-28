@@ -1,0 +1,9 @@
+#!/bin/bash
+
+CRON_MARKER="# stay-safe-lock-reminder"
+
+(
+  crontab -l 2>/dev/null | grep -v "$CRON_MARKER" || true
+) | crontab -
+
+echo "Stay Safe reminder removed."

@@ -1,0 +1,22 @@
+#!/bin/bash
+set -e
+
+CRON_MARKER="# stay-safe-lock-reminder"
+
+OS="$(uname -s)"
+
+if [[ "$OS" == "Darwin" ]]; then
+  CMD='say "Don’t forget to lock your laptop"'
+else
+  CMD='command -v notify-send >/dev/null && notify-send "Stay Safe" "Don’t forget to lock your laptop" || logger "Don’t forget to lock your laptop"'
+fi
+
+CRON_LINE="7,41 * * * * $CMD $CRON_MARKER"
+
+(
+  crontab -l 2>/dev/null | grep -v "$CRON_MARKER" || true
+  echo "$CRON_LINE"
+) | crontab -
+
+echo "Stay Safe reminder installed."
+
